@@ -28,33 +28,58 @@
   </script>
 </body>
 </html>
-:root{
-  --bg:#f5f7fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
-  --line:#e5e7eb; --brand:#2563eb;
-  --bg-dark:#0f172a; --card-dark:#111827; --ink-dark:#e5e7eb; --line-dark:#374151;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
-h1{margin:0;font-size:clamp(1.25rem,2.5vw,1.75rem)}
-footer{margin-top:2rem;padding:2rem 1.25rem;border-top:1px solid var(--line);text-align:center;color:var(--muted)}
-.toggle{border:1px solid var(--line);background:transparent;padding:.5rem .75rem;border-radius:.75rem;cursor:pointer}
-body.dark{background:var(--bg-dark);color:var(--ink-dark)}
-body.dark header{background:var(--card-dark);border-color:var(--line-dark)}
-body.dark footer{border-color:var(--line-dark);color:#9ca3af}
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem;background:var(--brand);color:white;border-radius:.5rem;margin:.5rem}
-.grid{max-width:1100px;margin:0 auto;padding:1.25rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;min-height:100%}
-.card img{width:100%;height:180px;object-fit:cover}
-.card .content{padding:1rem}
-.card h3{margin:.25rem 0 .5rem 0}
-.card p{margin:.25rem 0;color:var(--ink)}
-.album{opacity:.85}
-body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
-<article class="card">
-  <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Queen en concierto" loading="lazy">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Músicos favoritos — sitio de ejemplo</title>
+
+  <style>
+    /* ⬇⬇ Aquí va tu CSS ⬇⬇ */
+    :root{
+      --bg:#f5f7fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+      --line:#e5e7eb; --brand:#2563eb;
+      --bg-dark:#0f172a; --card-dark:#111827; --ink-dark:#e5e7eb; --line-dark:#374151;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
+    h1{margin:0;font-size:clamp(1.25rem,2.5vw,1.75rem)}
+    footer{margin-top:2rem;padding:2rem 1.25rem;border-top:1px solid var(--line);text-align:center;color:var(--muted)}
+    .toggle{border:1px solid var(--line);background:transparent;padding:.5rem .75rem;border-radius:.75rem;cursor:pointer}
+    body.dark{background:var(--bg-dark);color:var(--ink-dark)}
+    body.dark header{background:var(--card-dark);border-color:var(--line-dark)}
+    body.dark footer{border-color:var(--line-dark);color:#9ca3af}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem;background:var(--brand);color:white;border-radius:.5rem;margin:.5rem}
+    
+    .grid{max-width:1100px;margin:0 auto;padding:1.25rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;min-height:100%;transition:transform .15s ease, box-shadow .15s ease}
+    .card:hover{transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.08)}
+sed -i '/<\/head>/i\
+  <style>.card img{width:100% !important;height:220px !important;object-fit:cover !important;object-position:center;display:block}</style>
+' index.html
+
+
+
+    .card .content{padding:1rem}
+    .card h3{margin:.25rem 0 .5rem 0}
+    .card p{margin:.25rem 0;color:var(--ink)}
+    .album{opacity:.85}
+    body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
+    body.dark .card h3, body.dark .card p{color:var(--ink-dark)}
+
+    @media (min-width: 1200px){ .grid{gap:1.25rem} .card img{height:200px} }
+  </style>
+</head>
+<body>
+  <!-- Aquí tu contenido -->
+</body>
+</html>
+
+  <img src="https://www.shutterstock.com/image-photo/tabor-czech-republic-08142019-queenie-260nw-1505658842.jpg" alt="Queen en concierto" loading="lazy">
   <div class="content">
     <h3>Queen</h3>
     <p>Banda británica (1970) famosa por mezclar rock y teatralidad. Integrantes: Freddie Mercury, Brian May, Roger Taylor y John Deacon.</p>
@@ -62,7 +87,7 @@ body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
   </div>
 </article>
 <article class="card">
-  <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" alt="The Beatles, banda británica" loading="lazy">
+  <img src="https://www.shutterstock.com/image-photo/vintage-photo-portrait-beatles-musical-600nw-2539953749.jpg" alt="The Beatles, banda británica" loading="lazy">
   <div class="content">
     <h3>The Beatles</h3>
     <p>Cuarteto de Liverpool (1960–1970) que revolucionó la composición y la producción en la música popular.</p>
@@ -70,7 +95,7 @@ body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
   </div>
 </article>
 <article class="card">
-  <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66" alt="Nirvana en vivo" loading="lazy">
+  <img src="https://www.cubanet.org/wp-content/uploads/2023/03/image-8.jpg" alt="Nirvana en vivo" loading="lazy">
   <div class="content">
     <h3>Nirvana</h3>
     <p>Banda de grunge de Seattle liderada por Kurt Cobain. Popularizó el género a nivel mundial a inicios de los 90.</p>
@@ -78,7 +103,7 @@ body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
   </div>
 </article>
 <article class="card">
-  <img src="https://images.unsplash.com/photo-1511379938547-9b3e0d3e0c10" alt="Daft Punk cascos icónicos" loading="lazy">
+  <img src="https://www.reasonwhy.es/media/library/cascos-daft-punk.jpg" alt="Daft Punk cascos icónicos" loading="lazy">
   <div class="content">
     <h3>Daft Punk</h3>
     <p>Dúo francés de electrónica, referentes del French house e innovadores del uso de samples y estética futurista.</p>
@@ -86,7 +111,7 @@ body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
   </div>
 </article>
 <article class="card">
-  <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f" alt="Shakira en escenario" loading="lazy">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Shakira.JPG/960px-Shakira.JPG" alt="Shakira en escenario" loading="lazy">
   <div class="content">
     <h3>Shakira</h3>
     <p>Cantautora colombiana que fusiona pop latino, rock y ritmos árabes; proyección internacional bilingüe.</p>
