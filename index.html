@@ -94,3 +94,17 @@ body.dark .card{background:var(--card-dark);border-color:var(--line-dark)}
   </div>
 </article>
 @media (min-width: 1200px){ .grid{gap:1.25rem} .card img{height:200px} }
+.card{transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.08)}
+body.dark .card h3, body.dark .card p{color:var(--ink-dark)}
+<script>
+  // Persistencia del tema
+  const body = document.body;
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark'){ body.classList.add('dark'); }
+
+  document.getElementById('toggle-theme').addEventListener('click', () => {
+    body.classList.toggle('dark');
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>
