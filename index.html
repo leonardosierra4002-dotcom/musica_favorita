@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Músicos favoritos</title>
+  <meta name="description" content="">
+  <style>
+    /* (Se añadirá CSS en los siguientes commits) */
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#listado">Saltar al contenido</a>
+
+  <header aria-label="Encabezado del sitio">
+    <h1>Músicos favoritos</h1>
+    <button id="toggle-theme" class="toggle" aria-label="Cambiar tema">🌙</button>
+  </header>
+
+  <main id="listado" class="grid" aria-live="polite"></main>
+
+  <footer role="contentinfo">
+    Hecho con ♥ para el ejercicio.
+  </footer>
+
+  <script>
+    /* (Se añadirá JS más adelante) */
+  </script>
+</body>
+</html>
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --ink:#111827; --muted:#6b7280;
+  --line:#e5e7eb; --brand:#2563eb;
+  --bg-dark:#0f172a; --card-dark:#111827; --ink-dark:#e5e7eb; --line-dark:#374151;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
+h1{margin:0;font-size:clamp(1.25rem,2.5vw,1.75rem)}
+footer{margin-top:2rem;padding:2rem 1.25rem;border-top:1px solid var(--line);text-align:center;color:var(--muted)}
+.toggle{border:1px solid var(--line);background:transparent;padding:.5rem .75rem;border-radius:.75rem;cursor:pointer}
+body.dark{background:var(--bg-dark);color:var(--ink-dark)}
+body.dark header{background:var(--card-dark);border-color:var(--line-dark)}
+body.dark footer{border-color:var(--line-dark);color:#9ca3af}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem;background:var(--brand);color:white;border-radius:.5rem;margin:.5rem}
